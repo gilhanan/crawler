@@ -7,7 +7,10 @@
     "start": "npm run build && node build/index.js",
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "lint-and-fix": "eslint . --ext .ts --fix",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "prettier-watch": "onchange 'src/**/*.ts' -- prettier --write {{changed}}"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +20,11 @@
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
     "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "nodemon": "^2.0.18",
+    "onchange": "^7.1.0",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "ts-node": "^10.8.1",
     "typescript": "^4.7.4"
